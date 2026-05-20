@@ -3,7 +3,7 @@
 
 const config = {
   baseURL: "https://reqres.in/api", // Free test API — no signup needed
-  apiKey: "free_user_3Dyx8xAIDGJ5iEKQgUT8wmn9KcQ",      // Replace with your actual API key
+  apiKey: "YOUR_API_KEY_HERE",      // Replace with your actual API key
   timeout: 10000,                   // 10 seconds max per request
   responseSLA: 2000,                // Fail if response > 2000ms
 
