@@ -1,0 +1,20 @@
+{
+  "name": "apishield",
+  "version": "1.0.0",
+  "description": "API Testing Framework - BDD + SQL Assertions + CI/CD",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:report": "cucumber-js && node utils/generateReport.js",
+    "postman": "newman run postman/apishield.postman_collection.json -r htmlextra --reporter-htmlextra-export reports/newman-report.html"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "mysql2": "^3.6.0"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.3.0",
+    "chai": "^4.3.10",
+    "newman": "^6.1.0",
+    "newman-reporter-htmlextra": "^1.23.0"
+  }
+}

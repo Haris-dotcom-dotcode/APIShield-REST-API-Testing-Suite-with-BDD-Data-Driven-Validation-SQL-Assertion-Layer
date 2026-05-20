@@ -1,0 +1,696 @@
+[
+  {
+    "description": "  As a QA Engineer\n  I want to validate the authentication endpoints\n  So that only valid users can access the system",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-authentication-api;successful-login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Successful login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1319499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "I have valid user credentials",
+            "match": {
+              "location": "step-definitions\\authSteps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 273700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "I send a POST request to \"/login\"",
+            "match": {
+              "location": "step-definitions\\authSteps.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1057673500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "the response status should be 200",
+            "match": {
+              "location": "step-definitions\\authSteps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1599200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the response should contain a token",
+            "match": {
+              "location": "step-definitions\\authSteps.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2847800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "the response time should be under SLA",
+            "match": {
+              "location": "step-definitions\\authSteps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 789100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 597200
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-authentication-api;failed-login-with-invalid-credentials",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Failed login with invalid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 468499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "I have invalid user credentials",
+            "match": {
+              "location": "step-definitions\\authSteps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 417599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "I send a POST request to \"/login\"",
+            "match": {
+              "location": "step-definitions\\authSteps.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 310635800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "the response status should be 400",
+            "match": {
+              "location": "step-definitions\\authSteps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 194799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "the response should contain an error message",
+            "match": {
+              "location": "step-definitions\\authSteps.js:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 190200
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 307299
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-authentication-api;login-response-contains-required-fields",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Login response contains required fields",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 304999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "I have valid user credentials",
+            "match": {
+              "location": "step-definitions\\authSteps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 92199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I send a POST request to \"/login\"",
+            "match": {
+              "location": "step-definitions\\authSteps.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 302579399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "the response body should have field \"token\"",
+            "match": {
+              "location": "step-definitions\\authSteps.js:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 712100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 522599
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-authentication-api",
+    "line": 6,
+    "keyword": "Feature",
+    "name": "User Authentication API",
+    "tags": [],
+    "uri": "features\\auth.feature"
+  },
+  {
+    "description": "  As a QA Engineer\n  I want to validate all user management endpoints\n  So that user data is created, read, updated, and deleted correctly",
+    "elements": [
+      {
+        "description": "",
+        "id": "users-api---crud-operations;get-list-of-users-returns-correct-structure",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Get list of users returns correct structure",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 440599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I send a GET request to \"/users?page=1\"",
+            "match": {
+              "location": "step-definitions\\userSteps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 658423800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "the response status should be 200",
+            "match": {
+              "location": "step-definitions\\authSteps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 253000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "the response should contain a list of users",
+            "match": {
+              "location": "step-definitions\\userSteps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 305800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "each user should have fields \"id\", \"email\", \"first_name\", \"last_name\"",
+            "match": {
+              "location": "step-definitions\\userSteps.js:49"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1132599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "the response time should be under SLA",
+            "match": {
+              "location": "step-definitions\\authSteps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 90400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 313400
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "users-api---crud-operations;get-a-single-user-that-exists",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "Get a single user that exists",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 294100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "I send a GET request to \"/users/2\"",
+            "match": {
+              "location": "step-definitions\\userSteps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 570041600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "the response status should be 200",
+            "match": {
+              "location": "step-definitions\\authSteps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 241400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "the response body should have field \"data\"",
+            "match": {
+              "location": "step-definitions\\authSteps.js:51"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 200100
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 452200
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "users-api---crud-operations;get-a-user-that-does-not-exist",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "Get a user that does not exist",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 443600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "I send a GET request to \"/users/9999\"",
+            "match": {
+              "location": "step-definitions\\userSteps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 301068199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "the response status should be 404",
+            "match": {
+              "location": "step-definitions\\authSteps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 102099
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 228599
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "users-api---crud-operations;create-a-new-user-successfully",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Create a new user successfully",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 180600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "I have new user data",
+            "match": {
+              "location": "step-definitions\\userSteps.js:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 95900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "I send a POST request to \"/users\"",
+            "match": {
+              "location": "step-definitions\\authSteps.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 552619000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "the response status should be 201",
+            "match": {
+              "location": "step-definitions\\authSteps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 142899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "the response should contain the created user details",
+            "match": {
+              "location": "step-definitions\\userSteps.js:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 301099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "the response time should be under SLA",
+            "match": {
+              "location": "step-definitions\\authSteps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 89399
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 301199
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "users-api---crud-operations;update-an-existing-user",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "Update an existing user",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 271099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 32,
+            "name": "I have updated user data",
+            "match": {
+              "location": "step-definitions\\userSteps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 111200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "I send a PUT request to \"/users/2\"",
+            "match": {
+              "location": "step-definitions\\userSteps.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 307267699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "the response status should be 200",
+            "match": {
+              "location": "step-definitions\\authSteps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 209200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "the response should contain the updated user details",
+            "match": {
+              "location": "step-definitions\\userSteps.js:66"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 373900
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 475100
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "users-api---crud-operations;delete-a-user",
+        "keyword": "Scenario",
+        "line": 37,
+        "name": "Delete a user",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 480499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 38,
+            "name": "I send a DELETE request to \"/users/2\"",
+            "match": {
+              "location": "step-definitions\\userSteps.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 310872100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 39,
+            "name": "the response status should be 204",
+            "match": {
+              "location": "step-definitions\\authSteps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 278699
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 587999
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "users-api---crud-operations",
+    "line": 3,
+    "keyword": "Feature",
+    "name": "Users API - CRUD Operations",
+    "tags": [],
+    "uri": "features\\users.feature"
+  }
+]

@@ -1,0 +1,39 @@
+# .github/workflows/api-tests.yml
+# This runs your full test suite automatically on every push to GitHub
+# Free on GitHub — no server needed
+
+name: APIShield - API Test Suite
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run API test suite
+        run: npm test
+
+      - name: Upload test report
+        uses: actions/upload-artifact@v4
+        if: always() # Upload even if tests fail
+        with:
+          name: cucumber-report
+          path: reports/
+          retention-days: 30
